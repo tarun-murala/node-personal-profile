@@ -10,7 +10,7 @@ app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'))
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
-    ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
+    ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1',
     mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
     mongoURLLabel = "";
 
@@ -74,7 +74,7 @@ var initDb = function(callback) {
   });
 };
 
-app.get('/', function (req, res) {
+var initializeMongoDb = function() {
   // try to initialize the db on every request if it's not already
   // initialized.
   if (!db) {
@@ -88,11 +88,28 @@ app.get('/', function (req, res) {
       if (err) {
         console.log('Error running count. Message:\n'+err);
       }
-      res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails });
     });
-  } else {
-    res.render('index.html', { pageCountMessage : null});
   }
+}
+
+app.get('/', function (req, res) {
+  initializeMongoDb();
+  res.render('index.html', { pageCountMessage : null});
+});
+
+app.get('/details', function (req, res) {
+  initializeMongoDb();
+  res.render('details.html', { pageCountMessage : null});
+});
+
+app.get('/projects', function (req, res) {
+  initializeMongoDb();
+  res.render('projects.html', { pageCountMessage : null});
+});
+
+app.get('/contact', function (req, res) {
+  initializeMongoDb();
+  res.render('contact.html', { pageCountMessage : null});
 });
 
 app.get('/pagecount', function (req, res) {
