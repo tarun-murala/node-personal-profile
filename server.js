@@ -93,22 +93,22 @@ var initializeMongoDb = function() {
 }
 
 app.get('/', function (req, res) {
-  initializeMongoDb();
+  // initializeMongoDb();
   res.render('index.html', { pageCountMessage : null});
 });
 
 app.get('/details', function (req, res) {
-  initializeMongoDb();
+  // initializeMongoDb();
   res.render('details.html', { pageCountMessage : null});
 });
 
 app.get('/projects', function (req, res) {
-  initializeMongoDb();
+  // initializeMongoDb();
   res.render('projects.html', { pageCountMessage : null});
 });
 
 app.get('/contact', function (req, res) {
-  initializeMongoDb();
+  // initializeMongoDb();
   res.render('contact.html', { pageCountMessage : null});
 });
 
