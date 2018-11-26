@@ -4,10 +4,10 @@ var express = require('express'),
     morgan  = require('morgan');
     
 app.use(express.static('public'));
-// Object.assign=require('object-assign')
+Object.assign=require('object-assign')
 
-// app.engine('html', require('ejs').renderFile);
-// app.use(morgan('combined'))
+app.engine('html', require('ejs').renderFile);
+app.use(morgan('combined'))
 
 // var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
 //     ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
