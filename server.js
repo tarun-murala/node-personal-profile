@@ -92,24 +92,19 @@ app.use(morgan('combined'))
 //   }
 // }
 
+var pageNames = ['index', 'details', 'projects', 'contact',
+  'redux', 'react-redux', 'mxgraph', 'graphql', 'webpack-babel', 'angular'];
+
+  pageNames.forEach(page => {
+    app.get('/' + page, function (req, res) {
+      // initializeMongoDb();
+      res.render(page + '.html', { pageCountMessage : null});
+    });    
+  })
+
 app.get('/', function (req, res) {
   // initializeMongoDb();
   res.render('index.html', { pageCountMessage : null});
-});
-
-app.get('/details', function (req, res) {
-  // initializeMongoDb();
-  res.render('details.html', { pageCountMessage : null});
-});
-
-app.get('/projects', function (req, res) {
-  // initializeMongoDb();
-  res.render('projects.html', { pageCountMessage : null});
-});
-
-app.get('/contact', function (req, res) {
-  // initializeMongoDb();
-  res.render('contact.html', { pageCountMessage : null});
 });
 
 // app.get('/pagecount', function (req, res) {
