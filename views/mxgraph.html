@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="/css/fa-all.css" />
   </head>
 
-<body>
+<body onload="onLoadMxGraph()">
 
     <div class="site-wrapper site-wrapper-body site-wrapper-header">
         <div class="site-wrapper-inner">
@@ -47,8 +47,33 @@
     </div>
     
     
+    <div class="margin-left inner cover">
+        <div class="margin-right">
+            <h1 class="cover-heading float-left">ER Model</h1>
+            <button type="button" class="float-right btn btn-dark" onclick="showMoreER()">Show more</button>
+        </div>
+        <div id="erModel">
+            <!-- On Load ER Model -->
+        </div>
+    </div>
+    <br/>
+    <div class="margin-left inner cover">
+        <div class="margin-right">
+            <h1 class="cover-heading float-left">Data Model</h1>
+            <button type="button" class="float-right btn btn-dark" onclick="showMoreDataModel()">Show more</button>
+        </div>
+        <div id="dataModel">
+            <!-- On Load Data Model -->
+        </div>
+    </div>
 
-
+    <div class="margin-left inner cover">
+        <h1 class="cover-heading">Record Watchers</h1>
+        <!-- <p class="lead"></p>
+        <p class="lead">
+            <a href="/details/" class="btn btn-lg btn-secondary">Know more</a>
+        </p> -->
+    </div>
 
     <div class="mastfoot-album">
             <div class="inner">
@@ -63,12 +88,13 @@
         </div>
     </div>
 
-
     <!-- Scripts -->
     <script type="text/javascript" src="/js/jquery-1.12.4.js"></script>
     <script type="text/javascript" src="/js/tether.js"></script>
     <script type="text/javascript" src="/js/bootstrap.js"></script>
     <script type="text/javascript" src="/js/fa-all.js"></script>
+    <script type="text/javascript" src="/js/mxClient.js"></script>
+    <script type="text/javascript" src="/js/mxgraph.js"></script>
 </body>
 
 </html>

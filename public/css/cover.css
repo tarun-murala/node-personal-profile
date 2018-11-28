@@ -185,3 +185,19 @@ body {
   height: 15%;
 }
 
+.margin-left {
+  margin-left: 20%;
+}
+
+.margin-right {
+  margin-right: 20%;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+

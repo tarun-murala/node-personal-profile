@@ -1,0 +1,86 @@
+{
+    "table": {
+        "name": "pm_portfolio",
+        "label": "IT Applications Modernization",
+        "sys_id": "707a04579f312300730e5bb0657fcf2b",
+        "table_sys_id": "707a04579f312300730e5bb0657fcf2b"
+    },
+    "relationships": [ 
+        {
+            "table": {
+                "name": "pm_program",
+                "label": "Online Payments Security enhancements",
+                "sys_id": "c99ac4979f312300730e5bb0657fcf12",
+                "table_sys_id": "c99ac4979f312300730e5bb0657fcf12",
+                "related_column": "portfolio"
+            },
+            "relationships": [
+                {
+                    "table": {
+                        "name": "pm_program_task",
+                        "label": "Program Task",
+                        "sys_id": "959ac4979f312300730e5bb0657fcf31",
+                        "table_sys_id": "959ac4979f312300730e5bb0657fcf31",
+                        "related_column": "parent" 
+                    }
+                }
+            ]
+        },
+        {
+            "table": {
+                "name": "pm_project",
+                "label": "Workforce Planning Tool",
+                "sys_id": "d57a04579f312300730e5bb0657fcf9f",
+                "table_sys_id": "d57a04579f312300730e5bb0657fcf9f",
+                "related_column": "primary_portfolio"
+            },
+            "relationships": [
+                {
+                    "table": {
+                        "name": "pm_project_task",
+                        "label": "Project Task 1",
+                        "sys_id": "b07a04579f312300730e5bb0657fcf1b",
+                        "table_sys_id": "b07a04579f312300730e5bb0657fcf1b",
+                        "related_column": "parent" 
+                    }
+                },
+                {
+                    "table": {
+                        "name": "resource_plan",
+                        "label": "Resource Plan 1",
+                        "sys_id": "9d8a4c579f312300730e5bb0657fcf44",
+                        "table_sys_id": "9d8a4c579f312300730e5bb0657fcf44",
+                        "related_column": "top_task" 
+                    }
+                },
+                {
+                    "table": {
+                        "name": "cost_plan",
+                        "label": "Cost Plan 1",
+                        "sys_id": "fcba04d79f312300730e5bb0657fcf43",
+                        "table_sys_id": "fcba04d79f312300730e5bb0657fcf43",
+                        "related_column": "top_task" 
+                    }
+                },
+                {
+                    "table": {
+                        "name": "benefit_plan",
+                        "label": "Benefit Plan 1",
+                        "sys_id": "60bac0d79f312300730e5bb0657fcf70",
+                        "table_sys_id": "60bac0d79f312300730e5bb0657fcf70",
+                        "related_column": "top_task" 
+                    }
+                }
+            ]
+        },
+        {
+            "table": {
+                "name": "dmn_demand",
+                "label": "Implement Sales Quoting system",
+                "sys_id": "337a48579f312300730e5bb0657fcfc7",
+                "table_sys_id": "337a48579f312300730e5bb0657fcfc7",
+                "related_column": "portfolio" 
+            }
+        }
+    ]
+}
